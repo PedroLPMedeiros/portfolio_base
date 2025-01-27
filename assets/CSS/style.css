@@ -112,7 +112,7 @@ tfoot td, table th {
 }
 
 .main-content {
-    max-width: max-content;
+    max-width: 120rem;
     margin: 0 auto;
     padding: 8rem var(--gap);
 }
@@ -228,7 +228,6 @@ tfoot td, table th {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    height: 100vh;
 }
 
 .grid-main-head{
