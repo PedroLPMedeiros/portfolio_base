@@ -183,6 +183,11 @@ tfoot td, table th {
     height: 6.2rem;
 }
 
+body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}
+
 /*---------------Intro----------------*/
 
 .intro-content {
@@ -293,19 +298,149 @@ tfoot td, table th {
     gap: var(--gap);
 }
 
+.form-grid legend {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+
 .form-group {
     flex: 1 1 320px;
 }
 
 .form-group label {
     display: block;
+    margin-bottom: 1rem;
 }
 
 .form-group input,
-textarea, textarea {
+.form-group textarea {
     border: none;
     background: var(--white);
     padding: 1.5rem 2rem ;
     width: 100%;
+    font-size: 2rem;
+    outline: none;
+}
 
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 8px 2px var(--light-gray-color);
+}
+
+.form-group button {
+    border: 0.5rem solid var(--white);
+    background: none;
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.form-group button:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.footer p {
+    margin: 0;
+    padding: 3rem;
+}
+
+.close-menu {
+    display: none;
+}
+
+.footer a {
+    color: var(--primary-color);
+}
+
+.heart {
+    color: rgb(158, 23, 23);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding-bottom: 0.5rem;
+    background: var(--white);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--primary-color);
+    border: 0.1rem solid var(--primary-color);
+}
+
+/*-----Media Query-----*/
+
+@media (max-width:800px) {
+    .intro-content, .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-img {
+       width: 100%;
+       max-width: 100%;
+       height: 100%;
+    }
+
+    .gallery-img img {
+        width: 100%;
+    }
+
+    .grid-one-content {
+        display: block;
+    }
+
+    .menu-content, .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .menu-content {
+        height: 100vh;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 1.2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white);
+        font-size: 3rem;
+        line-height: 2.7rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .close-menu:checked~.menu {
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: 'X';
+    }
+
+    .menu-spacing {
+        display: none;
+    }
 }
