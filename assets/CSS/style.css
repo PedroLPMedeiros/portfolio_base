@@ -430,6 +430,8 @@ body .full-width {
         text-align: center;
         padding: 0.5rem;
         cursor: pointer;
+        border-radius: 20%;
+        border: 0.1rem solid var(--white)
     }
 
     .close-menu:checked~.menu {
